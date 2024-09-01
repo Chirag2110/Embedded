@@ -387,3 +387,58 @@ Trashing:
       Neural Network Simulation.
       Computer generated codes.
       Graph like data structure.
+*********************************************************************
+Chapter: 8 Different types of tag and index
+
+Till now, we have classified an address type.
+
+Address from CPU can be classified in two category.
+  1. Virtual or Logical Address
+  2. Physical Address.
+
+When address from CPU is physical cache access steps are as discuss previously, but
+when address is a virtual, it adds one more layer.
+
+1. PIPT:
+    Physically indexed physically Tag
+
+    Logical address first need to be converted to Physical address as followed
+    1. Check TLB if address is present get physical address.
+    2. If not get physical address by accessing page table entry from main memory
+       Access cache with it.
+       This will result into page fault, page will be brough from secondary storage
+       to main memory. TLB get upadted. Also update cache line.
+
+       A lot of penalty.
+
+    Cons:
+    1. Every address access gets translation from TLB.
+    2. Not good choice for inner level cache.
+
+2. VIVT:
+
+    Virtually indexed virtually Tag
+
+    1. Access related set from virtual index.
+    2. Match Tag
+    3. If Match fails access TLB, get physicall address bring data into Cache
+
+   Tagged and indexed through virtual tag and indexed. Doesn't require access to
+   TLB for translation.
+   Better compare to PIPT.
+
+   Lots of cache misses on context switch:
+   Since the cache is specific to logical address and each process has its own logical address space, two process can use the same address but refer to different data.
+   Remember that this is the same reason for having a page table for every process. This means that for every context switch, the cache needs to be flushed and every context switch follows with a lot of cache misses both of which is time-consuming and adds to the hit time.
+
+3. VIPT:
+
+    Virtually Indexed Physically Tag
+
+    Get Tag related to Virtual indexed from Cache
+    Get Logical to physical address translation from TLB.
+
+    Compare both Tag.
+
+    1. If TLB doesn't have corresponding physical address.  
+  
