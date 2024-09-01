@@ -189,7 +189,7 @@ Number of cache lines 16
 Total Cache size = 64*16 = 1 kB
 
  ----------------------------------------------------------------------
-|                28-bit                       |       6-bit            |
+|                26-bit                       |       6-bit            |
  -----------------------------------------------------------------------
 
  Address will be divided in two parts: Tag-Key and Offset respectively
