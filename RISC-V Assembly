@@ -1,0 +1,15 @@
+RISC-V: Assembly Programming
+
+Content:
+    1. ISA
+    2. pseudo instruction
+    3. assembly directives
+    4. APIs
+    5. C-libraries interface
+    6. understanding disassemblies
+
+End of this course:
+    1. RISC-V GNU tool chain
+    2. RISC-V ISA understanding
+    3. user level assembly Programming for RISC-V
+    4. understand disassemblies
